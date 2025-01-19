@@ -1,3 +1,4 @@
+
 import os
 import subprocess
 
@@ -20,7 +21,7 @@ def convert_to_mobi(option,delete_option):
     for file in files:
         output_file = os.path.splitext(file)[0] + extension
 
-        print("Fazendo a conversão do arquivo: ", file)
+        print(f"Fazendo a conversão do arquivo[{files.index(file)+1}/{len(files)}]: ", file)
         try:
             subprocess.run(
                 ["ebook-convert", file, output_file],
